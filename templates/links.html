@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %} {% block title %}Sv. Duh Tisno{% endblock %}
+{% block navbar %} {% include "header.html" %} {% include "footer.html" %} {%
+endblock %} {% block content %}
+<div class="container">
+  <div class="page-header">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Korisni linkovi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for link in links %}
+        <tr>
+          <td><a href="{{ link.naziv }}">{{ link.link }}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

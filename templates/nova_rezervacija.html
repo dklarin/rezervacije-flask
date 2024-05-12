@@ -1,0 +1,176 @@
+<!-- INCLUDE -->
+
+{% extends "bootstrap/base.html" %} {% block scripts %} {{ super() }} {{
+datepicker.loader(theme="sunny") }} {# to load jQuery-ui #} {{
+datepicker.picker(id=".dp") }} {% endblock %} {% block navbar %} {% include
+"header.html" %} {% include "footer.html" %} {% endblock %} {% block head %} {{
+super() }}
+
+<style>
+  .lijevo {
+    text-align: left;
+  }
+</style>
+
+{% endblock %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <!--STUPAC 1-->
+    <div class="col-md-2 sidenav"></div>
+
+    <!--STUPAC 2-->
+    <div class="col-md-8 text-center">
+      <div class="page-header">
+        <!--SVE SKUPA-->
+        <div class="row">
+          <form class="verticalform" action="/nova_rezervacija" method="POST">
+            <div class="form-group">
+              <!--Idp-->
+              <h1 value="redni_broj" name="redni_broj">
+                Rezervacija broj: {{redni_broj}}
+              </h1>
+              <!--Idk-->
+
+              <br />
+              <br />
+
+              <!--1. Gost-p-->
+              <div class="lijevo">
+                <label for="exampleDropdown">Odaberi gosta:</label>
+              </div>
+              <div class="dropdown">
+                <select class="form-control" id="exampleDropdown" name="gost">
+                  <option selected>Otvori za odabir</option>
+                  {%for lis in gosti%}
+                  <option value="{{lis}}">{{lis}}</option>
+                  {%endfor%}
+                </select>
+              </div>
+              <!--Gost-k-->
+
+              <br />
+
+              <!--4. Apartman-p-->
+              <div class="lijevo">
+
+                <label for="exampleDropdown">Odaberi apartman:</label>
+              </div>
+              <div class="dropdown">
+                <select class="form-control" id="exampleDropdown" name="apartman">
+
+                  {% if boja %}
+                  <option selected value="{{boja}}">{{boja | capitalize}}</option>
+                  {% else %}
+                  <option selected>Otvori za odabir</option>
+                  {% endif %}
+
+
+                  {%for apartman in apartmani%}
+                  <option value="{{apartman}}">{{apartman | capitalize}}</option>
+                  {%endfor%}
+                </select>
+              </div>
+              <!--Apartman-k-->
+
+              <br />
+
+
+
+
+
+              <!--2. Dolazak-p-->
+              <div class="lijevo">
+                <label for="exampleDropdown">Dolazak:</label>
+              </div>
+              {% if dolazak %}
+              <input type="text" class="form-control dp" name="dolazak" value={{dolazak}} />
+              {% else %}
+              <input type="text" class="form-control dp" name="dolazak" />
+              {% endif %}
+
+              <!--Dolazak-k-->
+
+              <br />
+
+              <!--3. Odlazak-p-->
+              <div class="lijevo">
+                <label for="exampleDropdown">Odlazak:</label>
+              </div>
+              {% if odlazak %}
+              <input type="text" class="form-control dp" name="odlazak" value={{odlazak}} />
+              {% else %}
+              <input type="text" class="form-control dp" name="odlazak" />
+              {% endif %}
+              <!--Odlazak-k-->
+
+              <br />
+
+              <!--5. Potvrđeno-p-->
+              <div class="lijevo">
+                <label for="exampleDropdown">Potvrđeno:</label>
+              </div>
+              <div class="dropdown">
+                <select class="form-control" id="exampleDropdown" name="potvrda">
+                  <option selected>Otvori za odabir</option>
+                  {%for akontacija in akontacije%}
+                  <option value="{{akontacija}}">{{akontacija}}</option>
+                  {%endfor%}
+                </select>
+              </div>
+              <!--Potvrđeno-k-->
+
+              <br />
+
+
+
+
+
+              <!--5. Akontacija-p-->
+              <div class="lijevo">
+                <label for="exampleDropdown">Akontacija:</label>
+              </div>
+              <div class="dropdown">
+                <select class="form-control" id="exampleDropdown" name="akontac">
+                  <option selected>Otvori za odabir</option>
+                  {%for akontacija in akontacije%}
+                  <option value="{{akontacija}}">{{akontacija}}</option>
+                  {%endfor%}
+                </select>
+              </div>
+              <!--Akontacija-k-->
+
+              <br />
+
+              <!--3. Odlazak-p-->
+              <div class="lijevo">
+                <label for="exampleDropdown">Plaćeno:</label>
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">€</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="placeno">
+                <span class="input-group-addon">.00</span>
+              </div>
+
+              <!--Odlazak-k-->
+
+              <br />
+
+              <!--6. Dodaj-p-->
+              <button type="submit" class="btn btn-primary btn-lg">
+                Dodaj
+              </button>
+              <!--Dodaj-k-->
+            </div>
+          </form>
+        </div>
+        <!--SVE SKUPA-->
+      </div>
+    </div>
+
+    <!--STUPAC 3-->
+    <div class="col-md-2 sidenav"></div>
+  </div>
+</div>
+
+{% endblock %}

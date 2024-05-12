@@ -1,0 +1,83 @@
+<!-- INCLUDE -->
+
+{% extends "bootstrap/base.html" %} {% block scripts %} {{ super() }} {{
+datepicker.loader(theme="sunny") }} {# to load jQuery-ui #} {{
+datepicker.picker(id=".dp") }} {% endblock %} {% block navbar %} {% include
+"header.html" %} {% include "footer.html" %} {% endblock %} {% block head %} {{
+super() }}
+
+<style>
+  thead th {
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  tr {
+    cursor: pointer;
+  }
+  td {
+    padding: 10px;
+    text-align: center;
+  }
+  .prst {
+    cursor: pointer;
+    cursor: -webkit-pointer;
+    cursor: -moz-pointer;
+    cursor: -o-pointer;
+    cursor: -ms-pointer;
+  }
+</style>
+
+{% endblock %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <!--STUPAC 1-->
+    <div class="col-md-2 sidenav"></div>
+
+    <!--STUPAC 2-->
+    <div class="col-md-8 text-center">
+      <div class="page-header">
+        <!--SVE SKUPA-->
+        <div class="row">
+          <div class="moja">
+            <ul>
+              <table class="table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Redni broj</th>
+                    <th>Gost</th>
+                    <th>Dolazak</th>
+                    <th>Odlazak</th>
+                    <th>Potvrđeno</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for lis in sve_retke%}
+                  <tr
+                    onclick="window.location.href = '/rezervacija/{{lis.redni_broj}}';"
+                  >
+                    <td>{{lis.redni_broj}}</td>
+                    <td>{{lis.gost}}</td>
+                    <td>{{lis.dolazak}}</td>
+                    <td>{{lis.odlazak}}</td>
+                    <td>{{lis.potvrdjeno}}</td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </ul>
+          </div>
+        </div>
+        <!--SVE SKUPA-->
+      </div>
+    </div>
+
+    <!--STUPAC 3-->
+    <div class="col-md-2 sidenav"></div>
+  </div>
+</div>
+
+{% endblock %}

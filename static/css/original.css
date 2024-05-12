@@ -1,0 +1,90 @@
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  cursor: pointer;
+  padding: 1px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font-style: italic;
+
+  text-decoration: none;
+  color: #839496;
+  background-color: #002b36;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  color: #826200;
+  font-style: italic;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+    }
+
+.button {
+  color: #826200;
+}
+
+ .moj {
+  top:198px;
+  left:365px;
+  width:62px;
+  height:51px;
+  color:white;
+  position:absolute;
+  text-align:center;
+  background-color:black;
+}
+
+#moj h1 {
+  margin:auto;
+  line-height:51px;
+  vertical-align:middle;
+}
+
+#asdf {
+position: fixed; 
+top: -50%; 
+left: -50%; 
+width: 200%; 
+height: 200%;
+}
+#asdf img {
+position: absolute; 
+top: 0; 
+left: 0; 
+right: 0; 
+bottom: 0; 
+margin: auto; 
+min-width: 50%;
+min-height: 50%;
+}
+
+.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+#mojaklasa div {
+  background-color: white;
+}
+
+
+
+
+
+
+
+

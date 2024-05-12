@@ -1,0 +1,101 @@
+<!-- INCLUDE -->
+
+{% extends "bootstrap/base.html" %} {% block scripts %} {{ super() }} {{
+datepicker.loader(theme="sunny") }} {# to load jQuery-ui #} {{
+datepicker.picker(id=".dp") }} {% endblock %} {% block navbar %} {% include
+"header.html" %} {% include "footer.html" %} {% endblock %} {% block head %} {{
+super() }}
+
+<style></style>
+
+{% endblock %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <!--STUPAC 1-->
+    <div class="col-md-2 sidenav"></div>
+
+    <!--STUPAC 2-->
+    <div class="col-md-8 text-center">
+      <div class="page-header">
+        <h1>{{trazeni_redak.gost}}</h1>
+        <!--SVE SKUPA-->
+        <div class="row">
+          <div class="form-group">
+            <div class="moja">
+              <ul>
+                <table class="table table-bordered table-striped">
+                  <tr>
+                    <th>Rezervacija:</th>
+                    <td>{{trazeni_redak.redni_broj}}</td>
+                  </tr>
+                  <tr>
+                    <th>Gost:</th>
+                    <td>{{trazeni_redak.gost}}</td>
+                  </tr>
+                  <tr>
+                    <th>Apartman:</th>
+                    <!--Filter-->
+                    <td>{{trazeni_redak.apartman | capitalize}}</td>
+                  </tr>
+                  <tr>
+                    <th>Dolazak:</th>
+                    <td>{{trazeni_redak.dolazak}}</td>
+                  </tr>
+                  <tr>
+                    <th>Odlazak:</th>
+                    <td>{{trazeni_redak.odlazak}}</td>
+                  </tr>
+                  <tr>
+                    <th>Noći:</th>
+                    <td>{{broj_noci}}</td>
+                  </tr>
+                  <tr>
+                    <th>Potvrđeno:</th>
+                    <td>{{trazeni_redak.potvrdjeno}}</td>
+                  </tr>
+                  <tr>
+                    <th>Akontacija:</th>
+                    <td>{{trazeni_redak.akontacija}}</td>
+                  </tr>
+                  {% if trazeni_redak.placeno %}
+                  <tr>
+                    <th>Plaćeno:</th>
+                    <td>{{trazeni_redak.placeno}} €</td>
+                  </tr>
+                  {% endif %} {% if trazeni_redak.cijena %}
+                  <tr>
+                    <th>Cijena:</th>
+                    <td>{{trazeni_redak.cijena}} €</td>
+                  </tr>
+                  {% endif %}
+                  <tr>
+                    <th>Ukupno:</th>
+                    <td>{{ukupno}} €</td>
+                  </tr>
+                  <tr>
+                    <th>Doplatiti:</th>
+                    <td>{{doplatiti}} €</td>
+                  </tr>
+
+                  {% if trazeni_redak.festival %}
+                  <tr>
+                    <th>Festival:</th>
+                    <td>{{trazeni_redak.festival}}</td>
+                  </tr>
+                  {% endif %}
+                </table>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--SVE SKUPA-->
+      </div>
+    </div>
+
+    <!--STUPAC 3-->
+    <div class="col-md-2 sidenav"></div>
+  </div>
+</div>
+
+{% endblock %}

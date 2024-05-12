@@ -1,0 +1,24 @@
+<style>
+  .footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+  }
+</style>
+
+<div class="footer">
+  <!-- Copyright -->
+  <footer class="text-center">
+    {% block footer %}
+    <small>
+      &copy; 2024–
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      Rezervacije
+    </small>
+    {% endblock %}
+  </footer>
+</div>

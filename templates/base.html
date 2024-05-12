@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+    <title>{% block title %}Sv. Duh Tisno{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/css/bootstrap.solar.min.css" />
+    <link rel="stylesheet" href="/static/css/original.css" />
+   
+  </head>
+  <body>
+
+    {% block navbar %} {% include "header.html" %} {% include "footer.html" %}
+    {% endblock %} {% block content %} {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+
+  </body>
+</html>
+
+
+

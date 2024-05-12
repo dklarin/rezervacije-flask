@@ -1,0 +1,9 @@
+<!-- CONTROL STRUCTURES - MACROS -->
+
+{% macro render_comment(comment) %}
+<li style="font-style: italic">{{ comment }}</li>
+{% endmacro %}
+
+<ul>
+  {% for comment in comments %} {{ render_comment(comment) }} {% endfor %}
+</ul>
