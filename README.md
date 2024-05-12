@@ -12,6 +12,10 @@ py wsgi.py
 
 Libraries used:
 
+### Packages used
+
+![Flask](https://img.shields.io/badge/Flask-v2.3.1-blue)
+
 Flask-Datepicker 0.14
 
 New Features:
