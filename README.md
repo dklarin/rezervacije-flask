@@ -15,6 +15,7 @@ Libraries used:
 ### Packages used
 
 ![Flask](https://img.shields.io/badge/Flask-v2.3.1-blue)
+![pygsheets](https://img.shields.io/badge/pygsheets-v2.0.6-blue)
 
 Flask-Datepicker 0.14
 
