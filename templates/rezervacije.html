@@ -10,17 +10,21 @@ super() }}
   thead th {
     text-align: center;
   }
+
   table {
     width: 100%;
     border-collapse: collapse;
   }
+
   tr {
     cursor: pointer;
   }
+
   td {
     padding: 10px;
     text-align: center;
   }
+
   .prst {
     cursor: pointer;
     cursor: -webkit-pointer;
@@ -28,6 +32,10 @@ super() }}
     cursor: -o-pointer;
     cursor: -ms-pointer;
   }
+
+  .apartman {
+    color: white;
+    }
 </style>
 
 {% endblock %} {% block content %}
@@ -49,9 +57,9 @@ super() }}
                   <tr>
                     <th>Redni broj</th>
                     <th>Gost</th>
+                    <th>Apartman</th>
                     <th>Dolazak</th>
                     <th>Odlazak</th>
-                    <th>Potvrđeno</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -61,9 +69,25 @@ super() }}
                   >
                     <td>{{lis.redni_broj}}</td>
                     <td>{{lis.gost}}</td>
+                    {% if lis.apartman=='tamnoplavi' %}
+                    <td style="background-color: darkblue" class="apartman">{{lis.apartman}}</td>
+                    {% elif lis.apartman=='zeleni' %}
+                    <td style="background-color: darkgreen" class="apartman">
+                      {{lis.apartman}}
+                    </td>
+                    {% elif lis.apartman=='smeđi' %}
+                    <td style="background-color: brown" class="apartman">{{lis.apartman}}</td>
+                    {% elif lis.apartman=='stan' %}
+                    <td style="background-color: gray" class="apartman">
+                      {{lis.apartman}}
+                    </td>
+                    {% else %}
+                    <td style="background-color: blue" class="apartman">
+                      {{lis.apartman}}
+                    </td>
+                    {% endif %}
                     <td>{{lis.dolazak}}</td>
                     <td>{{lis.odlazak}}</td>
-                    <td>{{lis.potvrdjeno}}</td>
                   </tr>
                   {%endfor%}
                 </tbody>
