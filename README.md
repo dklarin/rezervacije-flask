@@ -27,6 +27,17 @@ Fixes:
 
 Performance improvements and miscellaneous bug fixes.
 
+We’ve updated you to the latest version of Evernote
+Evernote 10.88.4 has been installed and is ready to use.
+
+Release Notes
+
+Fixes
+
+Fixed an issue where the note thumbnail was not updating after changing an image.
+Other performance improvements and miscellaneous bug fixes.
+
+
 Služi za testiranje:
 
 15 test1 test1 01.06.2024 05.06.2024
